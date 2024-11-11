@@ -137,5 +137,70 @@
   };
   const firstEmployee = getEmployeeCity(employeeFullDetails);
   // console.log(firstEmployee);
+
+  // task 10
+  const getDisplayName = (name: string | null | undefined): string => {
+    return name ?? "Anonymous";
+  };
+  console.log(getDisplayName("Omar"));
+  console.log(getDisplayName(null));
+  console.log(getDisplayName(undefined));
+
+  // task 11
+  function processData(data: unknown): unknown {
+    if (typeof data === "string") {
+      return data.toUpperCase();
+    } else if (typeof data === "number") {
+      return data * data;
+    }
+    return undefined; // Optional: Return undefined or handle other types if needed
+  }
+
+  // Test cases
+  console.log(processData("hello")); // Output: "HELLO"
+  console.log(processData(5)); // Output: 25
+  console.log(processData({})); // Output: undefined
+  // task 12
+  // function handleError(message: string): never {
+  //   throw new Error(message);
+  // }
+  // task 13
+  const genericFunction = <T>(array: T[]): T[] => {
+    return Array.from(new Set(array));
+  };
+
+  console.log(genericFunction([5, 4, 6, 5, 4, 6, 4, 5, 6]));
+  // task 14
+  const fetchData = () => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        const user = {
+          name: "Omar Faruk",
+          age: 23,
+        };
+        resolve(user);
+      }, 3000);
+    });
+  };
+  fetchData()
+    .then((res) => {
+      console.log(res);
+    })
+    .catch((err) => {
+      console.log(err.message);
+    });
+
+  // task 15
+  // Function to check if the given value is a string
+  const isString = (value: unknown): value is string => typeof value === "string" ;
+
+  // Function to print the value in uppercase if it is a string
+  const printUpperCase = (value: unknown): void => {
+    if (isString(value)) {
+      console.log(value.toUpperCase());
+    } else {
+      console.log("Value is not a string.");
+    }
+  }
   //
 }

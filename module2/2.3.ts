@@ -5,7 +5,7 @@
 
   // creating a general type
   // type GenericType<params> = Array<params> // for all usecase like array, number, string etc
-  // type GenericType<T> = Array<T> // T means Typescript which is industry standard
+  // type GenericType<T> = Array<T> // T means Typescript(Types) which is industry standard
   // normal
   const rollNumbers: number[] = [1, 2, 3, 4, 5, 6];
   // generic type
@@ -20,7 +20,7 @@
   // generic type
   const boolArr: boolean[] = [true, false, true];
 
-  type GenericType<T> = Array<T>; // T means Typescript which is industry standard for types (reusable)
+  type GenericType<T> = Array<T>; // T means (type) Typescript which is industry standard for types (reusable)
   const names: GenericType<string> = ["Ab", "Bc", "Cd"];
   const nums: GenericType<number> = [1, 2, 3, 4, 5];
   const tflsy: GenericType<boolean> = [true, false];
